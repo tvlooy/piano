@@ -1,0 +1,41 @@
+<?php
+
+play_piano(PIANO_G,  240);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_G,  340);
+play_piano(PIANO_A,  560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_G,  560);
+play_piano(PIANO_C6, 560);
+play_piano(PIANO_B,  560);
+play_piano(PIANO_0,  400);
+play_piano(PIANO_G,  240);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_G,  240);
+play_piano(PIANO_A,  560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_G,  560);
+play_piano(PIANO_D6, 560);
+play_piano(PIANO_C6, 560);
+play_piano(PIANO_0,  400);
+play_piano(PIANO_G,  240);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_G,  240);
+play_piano(PIANO_G6, 560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_D6, 560);
+play_piano(PIANO_C6, 560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_C6, 560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_A,  560);
+play_piano(PIANO_0,  400);
+play_piano(PIANO_F6, 240);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_F6, 240);
+play_piano(PIANO_E6, 560);
+play_piano(PIANO_0,   40);
+play_piano(PIANO_C6, 560);
+play_piano(PIANO_D6, 560);
+play_piano(PIANO_C6, 900);
+
