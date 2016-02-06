@@ -1,13 +1,13 @@
 # Piano
 
-This is a PHP extension to "play the piano" from PHP userland.
+This is a PHP extension to "play the piano" (beeps) from PHP userland.
 
-## How does it work
+## How does it work?
 
   - This only works on Linux.
   - This only works on PHP 7.
-  - This module uses the PC speaker, so make sure you have the Linux kernal module ```pcspkr``` loaded.
-  - This is not by default so check with ```lsmod``` and ```sudo insmod pcspkr``` if needed.
+  - This module uses the PC speaker, so make sure you have the Linux kernel module ```pcspkr``` loaded.
+  - This is not by default so check with ```lsmod``` and ``` sudo insmod /lib/modules/`uname -r`/kernel/drivers/input/misc/pcspkr.ko``` if needed.
   - Start php with sudo because we will try to write to ```/dev/console```.
 
 ## Build
