@@ -98,3 +98,6 @@ $ php -dextension=modules/piano.so -dpiano.play_opcodes=1 test.php
 [ZEND_RETURN (62) sounds like G]
 6
 ```
+
+[There is a demo on YouTube.](https://www.youtube.com/watch?v=_bgDQP_OB2k)
+
