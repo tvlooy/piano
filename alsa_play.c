@@ -74,6 +74,8 @@ void alsa_play(char *note, long ms) {
 
     for (loops = ms * 1000 / tmp; loops > 0; loops--) {
         if (pcm = read(fd, buff, buff_size) == 0) {
+            fclose(fd);
+            free(buff);
             return;
         }
 
