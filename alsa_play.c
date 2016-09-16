@@ -73,7 +73,6 @@ void alsa_play(char *note, long ms) {
     fd = open(filename, O_RDONLY);
 
     if (fd <= 0) {
-        close(fd);
         free(buff);
 
         return;
@@ -83,7 +82,7 @@ void alsa_play(char *note, long ms) {
         if (pcm = read(fd, buff, buff_size) == 0) {
             close(fd);
             free(buff);
-            
+
             return;
         }
 
