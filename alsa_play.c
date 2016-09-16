@@ -72,7 +72,7 @@ void alsa_play(char *note, long ms) {
     strcat(filename, ".wav");
     fd = open(filename, O_RDONLY);
 
-    if (fd <= 0) {
+    if (fd < 0) {
         free(buff);
 
         return;
