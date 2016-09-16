@@ -22,7 +22,7 @@ void alsa_play(char *note, long ms) {
     rate = 22050;
     channels = 2;
 
-    if (note[0] == '0') {
+    if (note[0] == '0') || strlen(note) > 2) {
         usleep(ms * 1000);
 
         return;
