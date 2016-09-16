@@ -17,7 +17,7 @@ void alsa_play(char *note, long ms) {
     char *buff;
     int buff_size, loops;
     int fd;
-    char filename[6] = "";
+    char filename[7] = "";
 
     rate = 22050;
     channels = 2;

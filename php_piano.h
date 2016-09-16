@@ -8,4 +8,4 @@ PHP_RINIT_FUNCTION(piano);
 
 PHP_FUNCTION(play_piano);
 
-void alsa_play(long freq, long ms);
+void alsa_play(char *note, long ms);
