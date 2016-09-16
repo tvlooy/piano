@@ -23,9 +23,9 @@ void alsa_play(char *note, long ms) {
     channels = 2;
 
     if (note[0] == '0') {
-      usleep(ms * 1000);
+        usleep(ms * 1000);
 
-      return;
+        return;
     }
 
     /* Open the PCM device in playback mode */

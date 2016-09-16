@@ -10,8 +10,8 @@ static zend_op_array* (*old_compile_file)(zend_file_handle* file_handle, int typ
 
 /* Define function entries */
 ZEND_BEGIN_ARG_INFO(arginfo_play_piano, 0)
-  ZEND_ARG_INFO(0, note)
-  ZEND_ARG_INFO(0, ms)
+    ZEND_ARG_INFO(0, note)
+    ZEND_ARG_INFO(0, ms)
 ZEND_END_ARG_INFO();
 
 zend_function_entry piano_functions[] = {
@@ -38,41 +38,41 @@ PHP_INI_END()
 
 /* Translate opcodes into piano tunes */
 void play_oparray(zend_op_array *op_array) {
-  int i;
-  char note[3] = "";
+    int i;
+    char note[3] = "";
 
-  for (i = 0; i < op_array->last; i++) {
-    zend_op op = op_array->opcodes[i];
+    for (i = 0; i < op_array->last; i++) {
+        zend_op op = op_array->opcodes[i];
 
-    if (op.opcode < 15) {
-      strcpy(note, "C");
-    } else if (op.opcode < 30) {
-      strcpy(note, "D");
-    } else if (op.opcode < 45) {
-      strcpy(note, "E");
-    } else if (op.opcode < 60) {
-      strcpy(note, "F");
-    } else if (op.opcode < 75) {
-      strcpy(note, "G");
-    } else if (op.opcode < 90) {
-      strcpy(note, "A");
-    } else if (op.opcode < 105) {
-      strcpy(note, "B");
-    } else if (op.opcode < 120) {
-      strcpy(note, "C6");
-    } else if (op.opcode < 135) {
-      strcpy(note, "D6");
-    } else if (op.opcode < 150) {
-      strcpy(note, "E6");
-    } else if (op.opcode < 165) {
-      strcpy(note, "F6");
-    } else {
-      strcpy(note, "G6");
+        if (op.opcode < 15) {
+            strcpy(note, "C");
+        } else if (op.opcode < 30) {
+            strcpy(note, "D");
+        } else if (op.opcode < 45) {
+            strcpy(note, "E");
+        } else if (op.opcode < 60) {
+            strcpy(note, "F");
+        } else if (op.opcode < 75) {
+            strcpy(note, "G");
+        } else if (op.opcode < 90) {
+            strcpy(note, "A");
+        } else if (op.opcode < 105) {
+            strcpy(note, "B");
+        } else if (op.opcode < 120) {
+            strcpy(note, "C6");
+        } else if (op.opcode < 135) {
+            strcpy(note, "D6");
+        } else if (op.opcode < 150) {
+            strcpy(note, "E6");
+        } else if (op.opcode < 165) {
+            strcpy(note, "F6");
+        } else {
+            strcpy(note, "G6");
+        }
+
+        printf("[%s (%d) sounds like %s]\n", zend_get_opcode_name(op.opcode), op.opcode, note);
+        alsa_play(note, 500);
     }
-
-    printf("[%s (%d) sounds like %s]\n", zend_get_opcode_name(op.opcode), op.opcode, note);
-    alsa_play(note, 500);
-  }
 }
 
 /* Hook opcode compilation */
@@ -121,14 +121,15 @@ PHP_RINIT_FUNCTION(piano) {
 
 /* function play_piano(string $note, int ms): void */
 PHP_FUNCTION(play_piano) {
-  char *note = NULL;
-  size_t note_len = 0;
-  long ms;
+    char *note = NULL;
+    size_t note_len = 0;
+    long ms;
 
-  if (zend_parse_parameters(ZEND_NUM_ARGS(), "sl", &note, &note_len, &ms) == FAILURE) {
-      return;
-  }
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "sl", &note, &note_len, &ms) == FAILURE) {
+        return;
+    }
 
-  alsa_play(note, ms);
-  RETURN_TRUE;
+    alsa_play(note, ms);
+
+    return;
 }
