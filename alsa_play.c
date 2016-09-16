@@ -22,7 +22,7 @@ void alsa_play(char *note, long ms) {
     rate = 22050;
     channels = 2;
 
-    if (note[0] == '0') || strlen(note) > 2) {
+    if (note[0] == '0' || strlen(note) > 2) {
         usleep(ms * 1000);
 
         return;
@@ -74,7 +74,7 @@ void alsa_play(char *note, long ms) {
 
     for (loops = ms * 1000 / tmp; loops > 0; loops--) {
         if (pcm = read(fd, buff, buff_size) == 0) {
-            fclose(fd);
+            close(fd);
             free(buff);
             return;
         }
