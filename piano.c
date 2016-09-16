@@ -71,7 +71,7 @@ void play_oparray(zend_op_array *op_array) {
         }
 
         printf("[%s (%d) sounds like %s]\n", zend_get_opcode_name(op.opcode), op.opcode, note);
-        alsa_play(note, 500);
+        alsa_play(note, 200 + op.opcode * 2);
     }
 }
 
