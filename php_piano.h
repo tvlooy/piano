@@ -1,7 +1,7 @@
 /* php_piano.h */
 
 #define PHP_PIANO_EXTNAME "piano"
-#define PHP_PIANO_VERSION "2.0.0"
+#define PHP_PIANO_VERSION "2.0.4"
 
 PHP_MINIT_FUNCTION(piano);
 PHP_RINIT_FUNCTION(piano);

@@ -79,7 +79,7 @@ void play_oparray(zend_op_array *op_array) {
 static zend_op_array *piano_compile_file(zend_file_handle *file_handle, int type) {
     zend_op_array *op_array;
 
-    op_array = old_compile_file (file_handle, type);
+    op_array = old_compile_file(file_handle, type);
     if (INI_BOOL("piano.play_opcodes") == 1) {
         play_oparray(op_array);
     }
